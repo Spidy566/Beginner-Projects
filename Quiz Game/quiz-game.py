@@ -1,16 +1,16 @@
-questions = ("How many elements are in the periodic table?: ",
-             "Which animal lays the largest eggs?: ",
-             "What is the most abundant gas in Earth's atmosphere?: ",
-             "How many bones are in the human body?: ",
+questions = ("What is full of holes but still holds water?: ",
+             "How many continents are there on Earth?:",
+             "Who wrote ""Romeo and Juliet""?: ",
+             "What is the chemical symbol for water?: ",
              "Which planet in the solar system is the hottest?: ")
 
-options = (("A. 116", "B. 117", "C. 118", "D. 119"),
-           ("A. Whale", "B. Crocodile", "C. Elephant", "D. Ostrich"),
-           ("A. Nitrogen", "B. Oxygen", "C. Carbon-Dioxide", "D. Hydrogen"),
-           ("A. 206", "B. 207", "C. 208", "D. 209"),
-           ("A. Mercury", "B. Venus", "C. Earth", "D. Mars"))
+options = (("A) London", "B) Berlin" , "C) Rome", "D) Paris"),
+           ("A) 5","B) 6","C) 7","D) 8"),
+           ("A) William Shakespeare", "B) Charles Dickens", "C) Jane Austen", "D) Arthur Conan Doyle"),
+           ("A)O2", "B) H2O", "C) CO2", "D) N2"),
+           ("A) Mercury", "B) Venus", "C) Earth", "D) Mars"))
 
-answers = ("C", "A", "A", "A", "B")
+answers = ("D", "C", "A", "B", "B")
 guesses = []
 check = ["A", "B", "C", "D"]
 score = 0
@@ -21,17 +21,21 @@ for question in questions:
     print(question)
     for option in options[question_num]:
         print(option)
-    guess = input("Enter the correct option:")
-    guesses.append(guess.upper())
+
+    while True:  # Add a while loop for input validation
+        guess = input("Enter the correct option:").strip().upper()
+        if guess in check:
+            break
+        else:
+            print("Invalid Input. Please enter A, B, C, or D.")
+
+    guesses.append(guess)
 
     if guesses[question_num] == answers[question_num]:
         score += 1
         print("Correct")
-    elif guesses[question_num] in check:
-        print("Incorrect")
-        print(f"{answers[question_num]} is the correct answer")
     else:
-        print("Invalid Input")
+        print("Incorrect")
         print(f"{answers[question_num]} is the correct answer")
 
     question_num += 1
@@ -49,3 +53,4 @@ for guess in guesses:
 print()
 print("Score Percentage:", round(score / len(questions) * 100, 2), "%")
 print("---------------------------------------------")
+

@@ -4,8 +4,8 @@ questions = ("What is full of holes but still holds water?: ",
              "What is the chemical symbol for water?: ",
              "Which planet in the solar system is the hottest?: ")
 
-options = (("A) London", "B) Berlin" , "C) Rome", "D) Paris"),
-           ("A) 5","B) 6","C) 7","D) 8"),
+options = (("A) London", "B) Berlin", "C) Rome", "D) Paris"),
+           ("A) 5", "B) 6", "C) 7", "D) 8"),
            ("A) William Shakespeare", "B) Charles Dickens", "C) Jane Austen", "D) Arthur Conan Doyle"),
            ("A)O2", "B) H2O", "C) CO2", "D) N2"),
            ("A) Mercury", "B) Venus", "C) Earth", "D) Mars"))
@@ -53,4 +53,3 @@ for guess in guesses:
 print()
 print("Score Percentage:", round(score / len(questions) * 100, 2), "%")
 print("---------------------------------------------")
-
